@@ -36,7 +36,7 @@ START_TIME=$(date +%s)
 
 # Perform the backup
 echo "Starting backup..." | tee -a "$LOG_FILE"
-sudo dd if=/dev/mmcblk0 bs=4M status=progress | gzip > "$BACKUP_FILE"
+sudo dd if=/dev/mmcblk0 bs=4M status=progress | gzip > "$BACKUP_FILE" #change the disk name using lsblk command
 
 # Check for any errors during the backup
 if [ $? -eq 0 ]; then
